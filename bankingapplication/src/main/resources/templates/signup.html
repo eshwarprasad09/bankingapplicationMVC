@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmln:th="http://www.thymeleaf.org"
+      xmlns:xmln="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+</head>
+<body>
+<form th:action="@{/saveuser}" th:object = "${newuser}" method="POST">
+
+    <div class = "form-group">
+        <label>Enter your Name </label>
+        <input
+                type = "text"
+                name = "name"
+                th:fileld = "*{name}"
+                class = "form-control"
+                placeholder = "Enter your name"/>
+    </div>
+    <div class = "form-group">
+        <label>Enter dateOfBirth</label>
+        <input
+                type = "text"
+                name = "dateOfBirth"
+                th:fileld = "*{dateOfBirth}"
+                class = "form-control"
+                placeholder = "Enter dateOfBirth"/>
+    </div>
+
+    <div class = "form-group">
+        <label>Enter age</label>
+        <input
+                type = "text"
+                name = "age"
+                th:fileld = "*{age}"
+                class = "form-control"
+                placeholder = "Enter age"/>
+    </div>
+
+    <div class = "form-group">
+        <label>Enter email</label>
+        <input
+                type = "text"
+                name = "email"
+                th:fileld = "*{email}"
+                class = "form-control"
+                placeholder = "Enter email"/>
+    </div>
+
+    <div class = "form-group">
+        <label>Enter password</label>
+        <input
+                type = "text"
+                name = "password"
+                th:fileld = "*{password}"
+                class = "form-control"
+                placeholder = "Enter password"/>
+    </div>
+
+    <div class = "box-footer">
+        <button type ="submit" class ="btn btn-primary">
+            sign up
+        </button>
+    </div>
+</form>
+
+</body>
+</html>

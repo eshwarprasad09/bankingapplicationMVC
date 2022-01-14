@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmln:th="http://www.thymeleaf.org"
+      xmlns:xmln="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Types</title>
+</head>
+<body>
+<h1>Available Account types</h1>
+<div th:object = "${user}">  </div>
+welcome
+<p th:text = "${user.name}">  </p>
+<hr>
+<tr th:each = "accounttype :${accounttypes}">
+    <td th:text = "${accounttype.id}"></td> --
+    <td th:text = "${accounttype.accountType}"></td> account --
+    <td th:text = "${accounttype.accountCode}"></td> account --
+    <td th:text = "${accounttype.interestRate}"></td> % interest --
+    <td th:text = "${accounttype.minimumAmount}"></td> minimum amount --
+    <td th:text = "${accounttype.maximumWithdraw}"></td> maximum withdraw
+    <td> <a th:href = "@{/openaccount/{accountType}/(accountType=${accounttype.accountCode})}"
+            class = "btn btn-primary btn-sm mb-3">open account</a></td>
+    <br>
+    <br>
+</tr>
+<hr>
+</body>
+</html>

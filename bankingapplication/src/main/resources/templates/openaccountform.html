@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmln:th="http://www.thymeleaf.org"
+      xmlns:xmln="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>open account form</title>
+</head>
+<body>
+<form th:action="@{/saveaccount}" th:object = "${userAccountDto}" method="POST">
+
+    <div class = "form-group">
+        <label>Enter pancard number</label>
+        <input
+                type = "text"
+                name = "panCard"
+                th:fileld = "*{panCard}"
+                class = "form-control"
+                placeholder = "Enter pancard number"/>
+    </div>
+
+    <div class = "form-group">
+        <label>deposite initial balaance</label>
+        <input
+                type = "text"
+                name = "balance"
+                th:fileld = "*{balance}"
+                class = "form-control"
+                placeholder = "initial balance"/>
+    </div>
+
+    <div class = "box-footer">
+        <button type ="submit" class ="btn btn-primary">
+            open account
+        </button>
+    </div>
+</form>
+</body>
+</html>
